@@ -1,5 +1,7 @@
 <h2>Change your password</h2>
 
+<div class="ui grid">
+<div class="twelve wide column">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class:"ui form" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
@@ -18,8 +20,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Change my password", class:"ui button"%>
+    <%= f.submit "Change my password", class:"ui button", style:"margin-bottom:1rem;"%>
   </div>
 <% end %>
-
+</div>
+</div>
 <%= render "devise/shared/links" %>

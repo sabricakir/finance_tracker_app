@@ -1,5 +1,7 @@
 <h2>Log in</h2>
 
+<div class="ui grid">
+<div class="twelve wide column">
 <%= form_for(resource, as: resource_name, html:{class:"ui form"}, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -21,9 +23,10 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in", class:"ui button"%>
+    <%= f.submit "Log in", class:"ui button", style:"margin-bottom:1rem;"%>
   </div>
 <% end %>
-
+</div>
+</div>
 <%= render "devise/shared/links" %>
 

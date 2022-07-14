@@ -1,5 +1,7 @@
 <h2>Resend unlock instructions</h2>
 
+<div class="ui grid">
+<div class="twelve wide column">
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, class:"ui form" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -9,8 +11,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend unlock instructions", class:"ui button" %>
+    <%= f.submit "Resend unlock instructions", class:"ui button", style:"margin-bottom:1rem;" %>
   </div>
 <% end %>
-
+</div>
+</div>
 <%= render "devise/shared/links" %>
