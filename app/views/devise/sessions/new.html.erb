@@ -2,7 +2,7 @@
 
 <div class="ui grid">
 <div class="twelve wide column">
-<%= form_for(resource, as: resource_name, html:{class:"ui form"}, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, html:{class:"ui form"}, data: { turbo: false },  url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email"%>

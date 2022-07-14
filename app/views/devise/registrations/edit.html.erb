@@ -2,7 +2,7 @@
 
 <div class="ui grid">
 <div class="twelve wide column">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"ui form", method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class:"ui form", method: :put }, data: { turbo: false }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
