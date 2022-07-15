@@ -1,0 +1,28 @@
+<h1>My Portfolio</h1>
+
+<div style="margin-top:50px;"> 
+    <h3> Search Stocks </h3>
+    <%= form_tag search_stock_path, method: :get, class:"ui form", data: { turbo: false } do%>
+        <div class="ui grid"> 
+            <div class="twelve wide column field" style="padding-right:0!important;"> 
+                <%= text_field_tag :stock, params[:stock], placeholder:"Stock Ticker Symbol", autofocus: true, style:"padding-bottom:1rem!important;" %>
+            </div>
+            <div class="four wide column field" style="padding-left:1px!important;"> 
+                <%= button_tag type: :submit, class:"ui green button", style:"padding-bottom:1rem!important;" do%>
+                    <i class="search large white icon"></i>
+                <%end%>
+            </div>
+        </div>
+    <%end%>
+</div>
+<% if @stock%>
+<div class="ui grid" style="margin-left:1px;">
+    <div class="ui card eight wide column" style="display:inline-block;">
+        <div class="content">
+            <strong> Symbol: </strong> <%= @stock.ticker%>
+            <strong> Company: </strong> <%= @stock.name%>
+            <strong> Price: </strong> <%= @stock.last_price%>
+        </div>
+    </div>
+</div>
+<% end %>
